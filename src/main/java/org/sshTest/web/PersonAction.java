@@ -29,6 +29,7 @@ public class PersonAction extends ActionSupport {
         return SUCCESS;
     }
 
+    //这个get会将list传递给响应的jsp文件，可以在jsp中使用el表达式或者ongl表达式接收
     public List<Person> getList(){
         return list;
     }
