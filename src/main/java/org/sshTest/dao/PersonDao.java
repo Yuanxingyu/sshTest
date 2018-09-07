@@ -11,6 +11,6 @@ import java.util.List;
 public interface PersonDao {
 
     //查询所有记录
-    public List<Person> queryAll();
+    List<Person> queryAll();
 
 }

@@ -23,6 +23,7 @@ public class Person {
     @Column(name = "id")
     private int id;
 
+    @Basic//意思是可以不设置@Column且此属性依旧映射表中的相应属性
     @Column(name = "name")
     private String name;
 
