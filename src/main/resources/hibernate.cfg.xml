@@ -2,16 +2,41 @@
 <!DOCTYPE hibernate-configuration SYSTEM
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
+<!-- 与spring整合时只需要配置Hibernate自身的属性，
+        数据库连接信息的配置在与spring整合时由spring配置  -->
 <hibernate-configuration>
+
     <session-factory>
-        <property name="hibernate.dialect">
-            org.hibernate.dialect.MySQLDialect
-        </property>
+
+        <!-- 数据库隔离级别 -->
+        <property name="connection.isolation">2</property>
+        <!--方言，sql信息等  -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!--<property name="hbm2ddl.auto">none</property>-->
+
+        <!-- 配置二级缓存 -->
+        <property name="cache.use_second_level_cache">true</property>
+
+        <!-- 配置二级缓存使用的产品 -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+        <!--设置hibernate.use_identifier_rollback为true，delete时会将对象置空  -->
+        <property name="hibernate.use_identifier_rollback">true</property>
+
+        <!--设定 jdbc的Statement 读取数据的时候每次从数据库中去除的记录条数 -->
+        <property name="hibernate.jdbc.fetch_size">100</property>
+
+        <!--设定对数据库进行批量删除，批量更新插入的时候的批次大小,此两项设置对mysql无效。  -->
+        <property name="jdbc.batch_size">30</property>
+
+<!--    数据库连接信息的配置在与spring整合时由spring配置
         <property name="hibernate.connection.driver_class">
             com.mysql.cj.jdbc.Driver
         </property>
 
-        <!-- Assume test is the database name -->
+         Assume test is the database name
         <property name="hibernate.connection.url">
             jdbc:mysql://localhost/sshTest
         </property>
@@ -21,9 +46,11 @@
         <property name="hibernate.connection.password">
             123456
         </property>
+-->
 
         <!-- List of XML mapping files -->
         <!-- <mapping resource="Person.hbm.xml"/> -->
+
         <!-- 扫描class映射文件 -->
         <mapping class="org.sshTest.entity.Person"/>
 

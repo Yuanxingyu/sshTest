@@ -5,6 +5,9 @@
 
 <!-- 配置内容搜了些教程...最关键的操作是最后一步扫描action所在的web包 -->
 <struts>
+    
+    <constant name="struts.objectFactory" value="spring"/>
+    
     <!-- 请求参数的编码方式 -->
     <constant name="struts.i18n.encoding" value="UTF-8" />
     <!-- 指定被struts2处理的请求后缀类型。多个用逗号隔开 -->

@@ -21,25 +21,47 @@
       <version>1.18.0</version>
     </dependency>
 
-    <!-- 添加mysql与hibernate依赖 -->
+    <!-- mysql依赖 -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.11</version>
     </dependency>
+    <!-- Hibernate核心依赖 -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>5.3.1.Final</version>
     </dependency>
 
+    <!-- java事务管理 -->
     <dependency>
       <groupId>javax.transaction</groupId>
       <artifactId>jta</artifactId>
       <version>1.1</version>
     </dependency>
 
-    <!-- 添加struts2依赖 -->
+    <!-- c3p0数据库连接池 -->
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
+
+    <!-- 二级缓存 -->
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>2.10.5</version>
+    </dependency>
+    <!-- Hibernate与ehcache整合 -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
+      <version>5.3.1.Final</version>
+    </dependency>
+
+    <!-- 添加struts2核心依赖 -->
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-core</artifactId>
@@ -51,13 +73,21 @@
       <artifactId>struts2-convention-plugin</artifactId>
       <version>2.5.16</version>
     </dependency>
+    <!-- struts2与spring整合依赖 -->
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-spring-plugin</artifactId>
+      <version>2.5.16</version>
+    </dependency>
 
     <!-- Servlet web依赖 -->
+    <!-- jsp标签 -->
     <dependency>
       <groupId>taglibs</groupId>
       <artifactId>standard</artifactId>
       <version>1.1.2</version>
     </dependency>
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
@@ -79,7 +109,49 @@
       <version>4.0.1</version>
     </dependency>
 
+    <!-- 1）spring核心依赖 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <!-- springbean管理 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <!-- 2)springDao层相关依赖（MVC的一部分） -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <!-- spring与Hibernate整合依赖 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+    <!-- spring-test相关依赖包 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
   </dependencies>
+
+
   <build>
     <finalName>sshTest</finalName>
   </build>

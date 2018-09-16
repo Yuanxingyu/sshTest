@@ -1,6 +1,8 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.sshTest.entity.Person;
 import org.sshTest.service.impl.PersonServiceImpl;
 
@@ -10,10 +12,12 @@ import java.util.List;
  * @author stary
  * @date 2018/9/5 下午4:40
  */
-@RunWith(JUnit4.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:spring/spring.xml")
 public class test {
 
-    PersonServiceImpl personService = new PersonServiceImpl();
+    @Autowired
+    PersonServiceImpl personService;
 
 
     @Test
